@@ -53,6 +53,7 @@ export class Ship {
     Ship.ctx.drawImage(this.img, this.posX, this.posY, this.width, this.height);
   }
   accelerate(xDir) {
+    if (!this.active) return;
     if (this.xDir != 0)
       return;
     this.xDir = xDir;
@@ -68,6 +69,7 @@ export class Ship {
     }, 30);
   }
   break() {
+    if (!this.active) return;
     if (this.xDir == 0)
       return;
     clearInterval(this.move);
@@ -83,6 +85,7 @@ export class Ship {
     }, 30);
   }
   shoot() {
+    if (!this.active) return;
     let audio = new Audio(blastSound);
     audio.play();
     const bullet = {
@@ -106,9 +109,11 @@ export class Ship {
     }, 30);
   }
   hit() {
+    if (!this.active) return;
     this.destroy();
   }
   destroy() {
+    if (!this.active) return;
     let audio = new Audio(explosionSound);
     audio.play();
     this.img = explosion;
