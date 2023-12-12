@@ -1,0 +1,18 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background: #111;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+canvas {
+  border-radius: 1rem;
+  background: black;
+  width: 66vh;
+  height: 88vh;
+}
