@@ -47,6 +47,8 @@ export class Ship {
     this.move = null;
     this.bullets = [];
     this.color = color;
+    this.blastCharge = 1;
+    this.blastRecharge = null;
     Ship.arr.push(this);
   }
   draw() {
@@ -85,9 +87,18 @@ export class Ship {
     }, 30);
   }
   shoot() {
-    if (!this.active) return;
+    if (!this.active || this.blastCharge < 0.2) return;
     let audio = new Audio(blastSound);
     audio.play();
+    this.blastCharge -= 0.2;
+    if (!this.blastRecharge)
+      this.blastRecharge = setInterval(() => {
+        this.blastCharge += 0.001;
+          if (this.blastCharge >= 1) {
+            clearInterval(this.blastRecharge);
+            this.blastRecharge = null;
+          }
+      }, 10);
     const bullet = {
       'x': this.posX + this.width / 2,
       'y': this.posY + this.height / 2 * this.yDir,

@@ -5,6 +5,7 @@
 body {
   background: #111;
   display: flex;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
   justify-content: center;
@@ -15,4 +16,29 @@ canvas {
   background: black;
   width: 66vh;
   height: 88vh;
+}
+.blaster-charge {
+    margin: 1rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background: black;
+    width: 10rem;
+    height: 1.5rem;
+    display: flex;
+    flex-direction: row;
+
+}
+.blaster-charge .charged {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    background: darkred;
+}
+.blaster-charge .charged div {
+    width: 1.8rem;
+    height: 1.3rem;
+    margin: 0.1rem;
+    border-radius: 0.5rem;
+    background: red;
 }

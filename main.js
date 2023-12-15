@@ -22,6 +22,8 @@ let interval = setInterval(() => {
   stars1.draw();
   stars2.draw();
   Ship.draw();
+  document.getElementById('charged').style.width = `${parseInt(xWing.blastCharge * 100)}%`;
+  document.getElementById('charged').innerHTML = '<div></div>'.repeat(parseInt(xWing.blastCharge * 5));
 }, 60);
 
 document.addEventListener('keydown', e => {
