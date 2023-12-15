@@ -117,7 +117,7 @@ export class Ship {
         }
       if (bullet.y < -this.height || bullet.y > Ship.height)
         clearInterval(bullet.interval);
-    }, 30);
+    }, 15);
   }
   hit() {
     if (!this.active) return;
