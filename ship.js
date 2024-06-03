@@ -1,11 +1,11 @@
 const explosion = new Image();
-explosion.src = "/public/explosion.png";
+explosion.src = "/explosion.png";
 const xWingImg = new Image();
-xWingImg.src = "/public/x-wing.png";
+xWingImg.src = "/x-wing.png";
 const tieFighterImg = new Image();
-tieFighterImg.src = "/public/tie-fighter.png";
+tieFighterImg.src = "/tie-fighter.png";
 
-const blastSound = '/public/blast.mp3';
+const blastSound = '/blast.mp3';
 const explosionSound = 'explosion.mp3';
 
 export class Ship {
